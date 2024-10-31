@@ -43,7 +43,21 @@ npm start
 Acesse a aplicação em http://localhost:3000 no seu navegador.
 
 ## Estrutura do Projeto
-Projeto-Biblioteca/ ├── public/ │ ├── index.html │ └── ... ├── src/ │ ├── components/ # Componentes reutilizáveis da aplicação │ ├── pages/ # Páginas da aplicação │ ├── services/ # Configuração de chamadas de API (ex: Axios) │ ├── App.js # Componente principal │ ├── index.js # Ponto de entrada da aplicação │ └── ... ├── package.json # Dependências e scripts do projeto └── README.md # Documentação do projeto
+
+```plaintext
+Projeto-Biblioteca/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/     # Componentes reutilizáveis da aplicação
+│   ├── pages/          # Páginas da aplicação
+│   ├── services/       # Configuração de chamadas de API (ex: Axios)
+│   ├── App.js          # Componente principal
+│   ├── index.js        # Ponto de entrada da aplicação
+│   └── ...
+├── package.json        # Dependências e scripts do projeto
+└── README.md           # Documentação do projeto
 
 # Scripts Disponíveis
 
