@@ -1,76 +1,57 @@
 # Projeto Biblioteca
 
 ## Descrição
-O **Projeto Biblioteca** é uma aplicação web desenvolvida para gerenciar livros de uma biblioteca virtual. A aplicação permite adicionar, visualizar, editar e remover livros, proporcionando uma interface amigável e intuitiva para os usuários. O projeto foi desenvolvido utilizando React e outras tecnologias modernas do ecossistema JavaScript.
-
-## Acesse o Projeto
-O projeto está disponível online através do seguinte link: [Projeto Biblioteca](https://projeto-biblioteca-xi.vercel.app)
-
-## Tecnologias Utilizadas
-- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
-- **Axios**: Biblioteca para realizar requisições HTTP de forma simplificada.
-- **Bootstrap**: Framework de CSS para estilização responsiva.
-- **React Router Dom**: Biblioteca para navegação e roteamento de páginas na aplicação.
-- **Vercel**: Plataforma para deploy e hospedagem de aplicações frontend.
+O **Projeto Biblioteca** é uma aplicação web desenvolvida para gerenciar livros de uma biblioteca virtual. A aplicação foi criada utilizando React e foca na experiência do usuário com uma interface intuitiva e responsiva.
 
 ## Funcionalidades
-- Adicionar novos livros ao acervo.
-- Listar todos os livros disponíveis na biblioteca.
-- Editar informações de livros existentes.
-- Excluir livros do acervo.
-- Interface amigável e responsiva, adaptada para diversos dispositivos.
+- Adicionar, visualizar, editar e excluir livros da biblioteca.
+- Design responsivo, adaptado para dispositivos móveis e desktops.
+- Navegação dinâmica entre as páginas utilizando React Router.
+
+## Tecnologias Utilizadas
+- **React.js**: Biblioteca para construção de interfaces de usuário.
+- **Axios**: Gerenciamento de requisições HTTP.
+- **Bootstrap**: Framework CSS para estilização responsiva.
 
 ## Instalação e Uso
 ### Pré-requisitos
-Certifique-se de ter o [Node.js](https://nodejs.org/) e o [npm](https://www.npmjs.com/) instalados em sua máquina.
+- Node.js instalado (versão 16 ou superior).
 
-### Passos para instalação:
-1. Clone o repositório do projeto:
+### Passos para instalação
+1. Clone o repositório:
    ```bash
    git clone https://github.com/RaFeltrim/Projeto-Biblioteca.git
-   cd Projeto-Biblioteca/Projeto-carlaomk1
+   cd Projeto-Biblioteca
+   ```
 
-Instale as dependências:
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-bash
-Copiar código
-npm install
-Inicie o servidor de desenvolvimento:
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm start
+   ```
 
-bash
-Copiar código
-npm start
-Acesse a aplicação em http://localhost:3000 no seu navegador.
+4. Acesse o aplicativo em [http://localhost:3000](http://localhost:3000).
 
 ## Estrutura do Projeto
-
-```plaintext
+```
 Projeto-Biblioteca/
 ├── public/
-│   ├── index.html
-│   └── ...
+│   └── index.html
 ├── src/
-│   ├── components/     # Componentes reutilizáveis da aplicação
-│   ├── pages/          # Páginas da aplicação
-│   ├── services/       # Configuração de chamadas de API (ex: Axios)
-│   ├── App.js          # Componente principal
-│   ├── index.js        # Ponto de entrada da aplicação
+│   ├── components/
+│   ├── pages/
+│   ├── services/
 │   └── ...
-├── package.json        # Dependências e scripts do projeto
-└── README.md           # Documentação do projeto
+└── package.json
+```
 
-# Scripts Disponíveis
+## Licença
+Este projeto está licenciado sob os termos da [MIT License](LICENSE).
 
-npm start: Inicia a aplicação em modo de desenvolvimento.
-npm run build: Compila a aplicação para produção.
-npm test: Executa os testes.
-npm run eject: Remove a dependência de build única do React.
-
-# Contribuição
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests no repositório.
-
-# Licença
-Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
-# Autor
-Desenvolvido por Rafael Feltrim e Daniela Yukari
+---
+**Autores**: Rafael Feltrim e Daniela Yukari Udo  
+**Contato**: [rafeltrim@gmail.com](mailto:rafeltrim@gmail.com), [danielaudo26@gmail.com](mailto:danielaudo26@gmail.com)
