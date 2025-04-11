@@ -1,0 +1,22 @@
+name: Check Código
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clona o repositório
+        uses: actions/checkout@v4
+
+      - name: Instala o Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Instala as dependências
+        run: npm install
+
+      - name: Roda os testes
+        run: npm test
