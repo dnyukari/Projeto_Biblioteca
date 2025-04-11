@@ -1,17 +1,23 @@
-steps:
-- name: Baixar os arquivos do projeto
-  uses: actions/checkout@v3
+name: Check Código
 
-- name: Instalar Node.js
-  uses: actions/setup-node@v3
-  with:
-    node-version: '18'
+on: [push]
 
-- name: Instalar dependências
-  run: npm install
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-- name: Verificar se o código está certo (lint)
-  run: npm run lint
+    steps:
+      - name: Clona o repositório
+        uses: actions/checkout@v4
 
-- name: Testar se o código funciona (testes)
-  run: npm test
+      - name: Instala o Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Instala as dependências
+        run: npm install
+
+      - name: Roda os testes
+        run: npm test
+
