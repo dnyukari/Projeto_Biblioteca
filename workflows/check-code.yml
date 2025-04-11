@@ -1,0 +1,17 @@
+steps:
+- name: Baixar os arquivos do projeto
+  uses: actions/checkout@v3
+
+- name: Instalar Node.js
+  uses: actions/setup-node@v3
+  with:
+    node-version: '18'
+
+- name: Instalar dependências
+  run: npm install
+
+- name: Verificar se o código está certo (lint)
+  run: npm run lint
+
+- name: Testar se o código funciona (testes)
+  run: npm test
