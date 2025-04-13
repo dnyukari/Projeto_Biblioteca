@@ -1,0 +1,26 @@
+# Nome do workflow (aparece na aba "Actions" do GitHub)
+name: Deploy no GitHub Pages
+
+# Define quando esse workflow será executado
+on:
+  push:
+    branches:
+      - master  # Roda sempre que houver um push na branch "main"
+              # Troque para 'master' se sua branch principal for essa
+
+jobs:
+  deploy:  # Nome do "job" (uma tarefa ou conjunto de passos)
+    runs-on: ubuntu-latest  # O job vai rodar em um servidor com Ubuntu
+
+    steps:
+      # 1. Passo: clona o código do repositório para o runner (máquina que executa o job)
+      - name: Pegar os arquivos do repositório
+        uses: actions/checkout@v3  # Ação oficial do GitHub para clonar o repositório
+
+      # 2. Passo: faz o deploy no GitHub Pages usando a action 'peaceiris/actions-gh-pages'
+      - name: Deploy no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3  # Action que faz o deploy no GitHub Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Token gerado automaticamente para autenticar
+          publish_dir: public  # Pasta com os arquivos finais do seu site
+                              # troque por "." se o index.html estiver na raiz do projeto
