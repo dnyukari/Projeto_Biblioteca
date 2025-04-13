@@ -1,0 +1,24 @@
+name: Build com Gatinho
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Build da aplicação
+        run: npm run build
+
+      - name: Gatinho feliz 😸
+        if: success()
+        run: echo "Build concluído com sucesso! 😸🎉"
+
+      - name: Gatinho triste 😿
+        if: failure()
+        run: echo "Build falhou... 😿 Tente novamente!"
