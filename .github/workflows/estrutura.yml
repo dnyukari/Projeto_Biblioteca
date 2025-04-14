@@ -1,0 +1,24 @@
+# Nome do workflow que aparece na aba "Actions"
+name: Ver estrutura do projeto
+
+# O workflow será executado sempre que houver um push no repositório
+on: [push]
+
+jobs:
+  estrutura:
+    # O job será executado em uma máquina virtual com Ubuntu 
+    runs-on: ubuntu-latest
+
+    # Lista de etapas (steps) que esse job vai executar
+    steps:
+      # Primeira etapa: faz o checkout do repositório — ou seja, baixa os arquivos para o ambiente
+      - uses: actions/checkout@v3
+
+      # Segunda etapa: exibe a estrutura do projeto
+      - name: Mostrar estrutura do projeto
+        run: |
+          echo "📁 Estrutura do projeto:"
+          
+          # Tenta mostrar a estrutura de diretórios até 2 níveis de profundidade
+          # Se o comando `tree` não estiver disponível, usa `ls -R` como alternativa
+          tree -L 2 || ls -R
