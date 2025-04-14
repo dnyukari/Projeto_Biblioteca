@@ -1,0 +1,21 @@
+# Nome do workflow que aparece na aba "Actions"
+name: Mensagem de Boas-Vindas
+
+# O workflow será executado sempre que houver um push no repositório
+on: [push]
+
+jobs:
+  mensagem:
+    # O job será executado em uma máquina virtual com Ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      # Faz o checkout do código (opcional se não for usar os arquivos)
+      - uses: actions/checkout@v3
+
+      # Step que imprime mensagens no terminal
+      - name: Exibir mensagens de boas-vindas
+        run: |
+          echo "🚀 Bem-vindo ao GitHub Actions!"
+          echo "🕒 Data e hora: $(date)"
+          echo "👤 Usuário: $GITHUB_ACTOR"
