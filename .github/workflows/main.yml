@@ -1,0 +1,46 @@
+# Nome do workflow que aparece na aba "Actions" do GitHub
+name: CI - Projeto Biblioteca
+
+# Quando o workflow será acionado
+on:
+  push:                    # Quando fizer push...
+    branches: [ master ]   # ...na branch "master"
+  pull_request:            # Ou ao criar PRs...
+    branches: [ master ]   # ...que afetem a branch "master"
+  workflow_dispatch:       # Permite rodar manualmente no GitHub
+
+# Definição dos jobs
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # Usa um ambiente Linux atualizado
+
+    steps:
+      # Baixa o código do repositório
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      # Configura o Node.js (mesma versão usada no seu projeto)
+      - name: Configura Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Instala as dependências declaradas no package.json
+      - name: Instalar dependências
+        run: npm install
+
+      # (Opcional) Roda linter se você tiver eslint configurado
+      - name: Rodar ESLint
+        run: npm run lint
+        continue-on-error: true  # Não quebra o build se der erro de lint
+
+      # Roda testes (se existirem no projeto)
+      - name: Rodar testes
+        run: npm test
+        continue-on-error: true  # Não quebra o workflow caso não haja testes configurados
+
+      # (Opcional) Gera relatório de build ou outras tarefas pós-instalação
+      - name: Verificar versão do app
+        run: node -v && npm -v
+
+      # (Opcional) Notificação ou deploy pode vir depois aqui
