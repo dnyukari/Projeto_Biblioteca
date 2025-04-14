@@ -1,0 +1,26 @@
+*message.yml*
+
+# Nome do workflow que aparece na aba "Actions"
+name: Mensagem de Boas-Vindas
+
+# O workflow será executado sempre que houver um push no repositório
+on: [push]
+
+jobs:
+  # Definindo um job chamado "mensagem"
+  mensagem:
+    # O job será executado em uma máquina virtual com Ubuntu 
+    runs-on: ubuntu-latest
+
+    # Lista de etapas (steps) que esse job vai executar
+    steps:
+      # Step único que executa comandos de terminal
+      - run: |
+          # Imprime uma mensagem de boas-vindas nos logs do workflow
+          echo "🚀 Bem-vindo ao GitHub Actions!"
+
+          # Imprime a data e hora atual 
+          echo "🕒 Data e hora: $(date)"
+
+          # Imprime o nome do usuário que fez o push 
+          echo "👤 Usuário: $GITHUB_ACTOR"
